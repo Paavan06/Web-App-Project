@@ -1,0 +1,148 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="Web_App_Project.Site_Mobile" %>
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Your custom CSS -->
+    <link href="~/style.css" runat="server" rel="stylesheet">
+
+    <!-- Allow child pages to add their own styles -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+<form id="form1" runat="server">
+<div class="d-flex min-vh-100">
+
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar d-flex flex-column justify-content-between">
+
+        <!-- Brand -->
+        <div>
+            <div class="sidebar-brand d-flex align-items-center gap-2 p-3">
+                <div class="brand-logo">MJ</div>
+                <div>
+                    <p class="text-white fw-bold mb-0" style="font-size:13px">Maju Jaya</p>
+                    <small class="text-secondary" style="font-size:10px">Agrotech Supplies</small>
+                </div>
+            </div>
+
+            <!-- Nav links -->
+            <div class="px-2 mt-2">
+                <p class="nav-section-label">MY WORKSPACE</p>
+
+                <a href="StaffDashboard.aspx" class="nav-link-item">
+                    <i class="nav-icon">&#9783;</i> Dashboard
+                </a>
+                <a href="MyAttendance.aspx" class="nav-link-item">
+                    <i class="nav-icon">&#128197;</i> My Attendance
+                </a>
+                <a href="MyOvertime.aspx" class="nav-link-item">
+                    <i class="nav-icon">&#128336;</i> My Overtime
+                </a>
+                <a href="MyLateAbsence.aspx" class="nav-link-item">
+                    <i class="nav-icon">&#9888;</i> My Late / Absence
+                </a>
+                <a href="MyProfile.aspx" class="nav-link-item">
+                    <i class="nav-icon">&#128100;</i> My Profile
+                </a>
+            </div>
+        </div>
+
+        <!-- Staff info at bottom -->
+        <div class="p-2 border-top border-secondary">
+            <div class="d-flex align-items-center gap-2 p-2 staff-bottom">
+                <div class="staff-avatar-sm">
+                    <%= Session["StaffName"] != null ? 
+                        Session["StaffName"].ToString().Substring(0,1).ToUpper() : "S" %>
+                </div>
+                <div>
+                    <p class="text-white mb-0" style="font-size:11px;font-weight:500">
+                        <%= Session["StaffName"] %>
+                    </p>
+                    <small class="text-secondary" style="font-size:10px">
+                        <%= Session["Position"] %>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== MAIN AREA ===== -->
+    <div class="d-flex flex-column flex-grow-1">
+
+        <!-- TOPBAR / NAVBAR -->
+        <div class="topbar d-flex align-items-center 
+                    justify-content-between px-4 py-2">
+
+            <!-- Left: page title -->
+            <div>
+                <small class="text-muted">Staff Portal</small>
+                <h6 class="mb-0 fw-bold">
+                    <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+                        Dashboard
+                    </asp:ContentPlaceHolder>
+                </h6>
+            </div>
+
+            <!-- Right: search, bell, user -->
+            <div class="d-flex align-items-center gap-3">
+
+                <!-- User pill -->
+                <div class="user-pill d-flex align-items-center gap-2">
+                    <div class="user-avatar-sm">
+                        <%= Session["StaffName"] != null ? 
+                            Session["StaffName"].ToString().Substring(0,1).ToUpper() : "S" %>
+                    </div>
+                    <div>
+                        <p class="mb-0" style="font-size:11px;font-weight:500">
+                            <%= Session["Username"] %>
+                        </p>
+                        <small class="text-muted" style="font-size:9px">
+                            <%= Session["UserRole"] %>
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Logout button -->
+                <a href="../Logout.aspx" class="btn btn-sm btn-outline-danger">
+                    Logout
+                </a>
+
+            </div>
+        </div>
+
+        <!-- PAGE CONTENT — each .aspx page fills this -->
+        <div class="flex-grow-1 p-4" style="background:#f4f6f9; overflow-y:auto;">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="topbar d-flex justify-content-between px-4 py-2">
+            <small class="text-muted">
+                © 2026 Maju Jaya Agrotech Supplies Sdn. Bhd.
+            </small>
+            <small class="text-muted">
+                Reg. No. 201801023456 (1234567-A)
+            </small>
+            <small class="text-muted">Staff Management System</small>
+        </footer>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
+</form>
+</body>
+</html>
