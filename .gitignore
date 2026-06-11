@@ -15,3 +15,7 @@ out/
 # NuGet
 *.nupkg
 packages/
+
+# SQL Server database files — locked at runtime, never commit
+*.mdf
+*.ldf
