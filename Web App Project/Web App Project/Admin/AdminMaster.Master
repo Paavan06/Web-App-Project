@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="AdminMaster.master.cs"
+    Inherits="Web_App_Project.AdminMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Staff Management System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Shared CSS -->
+    <link href="~/style.css" runat="server" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+<form id="form1" runat="server">
+    <div class="d-flex min-vh-100">
+
+        <!-- ===== SIDEBAR ===== -->
+        <div class="sidebar d-flex flex-column justify-content-between">
+            <div>
+
+                <!-- Brand -->
+                <div class="sidebar-brand d-flex align-items-center gap-2 p-3">
+                    <div class="brand-logo">MJ</div>
+                    <div>
+                        <p class="text-white fw-bold mb-0" style="font-size: 13px">Maju Jaya</p>
+                        <small class="text-secondary" style="font-size: 10px">Agrotech Supplies</small>
+                    </div>
+                </div>
+
+                <div class="px-2 mt-2">
+
+                    <!-- ADMIN PANEL section -->
+                    <p class="nav-section-label">ADMIN PANEL</p>
+                    <a href="AdminDashboard.aspx" class="nav-link-item">
+                        <span class="nav-icon">&#9783;</span> Dashboard
+                    </a>
+
+                    <!-- MANAGEMENT section -->
+                    <p class="nav-section-label mt-2">MANAGEMENT</p>
+                    <a href="AdminStaffProfile.aspx" class="nav-link-item">
+                        <span class="nav-icon">&#128101;</span> Staff Profile
+                    </a>
+                    <a href="AdminAttendance.aspx" class="nav-link-item">
+                        <span class="nav-icon">&#128197;</span> Daily Attendance
+                    </a>
+                    <a href="AdminOvertime.aspx" class="nav-link-item">
+                        <span class="nav-icon">&#128336;</span> Overtime Record
+                    </a>
+                    <a href="AdminLateAbsence.aspx" class="nav-link-item">
+                        <span class="nav-icon">&#9888;</span> Late / Absence
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Admin info at bottom -->
+            <div class="p-2 border-top border-secondary">
+                <div class="d-flex align-items-center gap-2 p-2 staff-bottom">
+                    <div class="admin-avatar-sm">A</div>
+                    <div>
+                        <p class="text-white mb-0" style="font-size: 11px; font-weight: 600">
+                            <%= Session["Username"] %>
+                        </p>
+                        <small style="font-size: 10px; color: #e24b4a; font-weight: 500">Administrator
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===== MAIN AREA ===== -->
+        <div class="d-flex flex-column flex-grow-1">
+
+            <!-- TOPBAR -->
+            <div class="topbar d-flex align-items-center justify-content-between px-4 py-2">
+
+                <!-- Left: page title -->
+                <div>
+                    <small class="text-muted">Admin Portal</small>
+                    <h6 class="mb-0 fw-bold">
+                        <asp:ContentPlaceHolder ID="PageTitle" runat="server">
+                            Dashboard
+                        </asp:ContentPlaceHolder>
+                    </h6>
+                </div>
+
+                <!-- Right: user, logout -->
+                <div class="d-flex align-items-center gap-3">
+
+                    <div class="user-pill d-flex align-items-center gap-2">
+                        <div class="admin-avatar-sm">A</div>
+                        <div>
+                            <p class="mb-0" style="font-size: 11px; font-weight: 600">
+                                <%= Session["Username"] %>
+                            </p>
+                            <small style="font-size: 9px; color: #e24b4a; font-weight: 500">Administrator
+                            </small>
+                        </div>
+                    </div>
+
+                    <a href="~/Logout.aspx" runat="server" class="btn btn-sm btn-outline-danger">Logout
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- PAGE CONTENT -->
+            <div class="flex-grow-1 p-4" style="background: #f4f6f9; overflow-y: auto;">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="topbar d-flex justify-content-between px-4 py-2">
+                <small class="text-muted">© 2026 Maju Jaya Agrotech Supplies Sdn. Bhd.</small>
+                <small class="text-muted">Reg. No. 201801023456 (1234567-A)</small>
+                <small class="text-muted">Staff Management System</small>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
+</form>
+</body>
+</html>

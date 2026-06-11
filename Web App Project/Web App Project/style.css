@@ -1,0 +1,249 @@
+﻿/* Left panel dark blue background */
+.left-panel {
+    background-color: #0f2a5e;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Decorative circle on top right of left panel */
+    .left-panel::before {
+        content: '';
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 250px;
+        height: 250px;
+        background-color: #1a3a7a;
+        border-radius: 50%;
+    }
+
+    /* Decorative circle on bottom right */
+    .left-panel::after {
+        content: '';
+        position: absolute;
+        bottom: 30px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: #0d2350;
+        border-radius: 50%;
+    }
+
+/* MJ logo box */
+.brand-logo {
+    width: 45px;
+    height: 45px;
+    background-color: #1d6fbf;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1;
+}
+
+/* Feature icons */
+.feature-icon {
+    font-size: 20px;
+}
+
+/* Demo accounts box */
+.demo-box {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+/* Demo admin button */
+.demo-admin {
+    background-color: #e6f1fb;
+    border: 1px solid #b5d4f4;
+}
+
+    .demo-admin:hover {
+        background-color: #cce0f5;
+    }
+
+/* Demo staff button */
+.demo-staff {
+    background-color: #eaf3de;
+    border: 1px solid #c0dd97;
+}
+
+    .demo-staff:hover {
+        background-color: #d5eab8;
+    }
+
+/* Make sign in button dark blue */
+.btn-primary {
+    background-color: #1d5fbf;
+    border-color: #1d5fbf;
+}
+
+    .btn-primary:hover {
+        background-color: #1650a8;
+        border-color: #1650a8;
+    }
+
+.left-panel {
+    /* property: value — WHAT to change */
+    background-color: #0f2a5e;
+    color: white;
+    padding: 40px;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #0f2a5e;
+    min-height: 100vh;
+    flex-shrink: 0;
+}
+
+.sidebar-brand {
+    border-bottom: 1px solid #1a3a7a;
+}
+
+.brand-logo {
+    width: 36px;
+    height: 36px;
+    background-color: #1d6fbf;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.nav-section-label {
+    font-size: 9px;
+    color: #5a7aaa;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding-left: 6px;
+}
+
+.nav-link-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    color: #c8ddf5;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+    .nav-link-item:hover {
+        background-color: #1a3a7a;
+        color: #ffffff;
+    }
+
+    .nav-link-item.active {
+        background-color: #1d5fbf;
+        color: #ffffff;
+    }
+
+.nav-icon {
+    font-style: normal;
+    font-size: 15px;
+    width: 18px;
+}
+
+.staff-bottom {
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+    .staff-bottom:hover {
+        background-color: #1a3a7a;
+    }
+
+.staff-avatar-sm {
+    width: 32px;
+    height: 32px;
+    background-color: #1d5fbf;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    min-height: 54px;
+}
+
+.search-box {
+    background-color: #f4f6f9;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 5px 12px;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 12px;
+    color: #555;
+    width: 180px;
+}
+
+.notif-btn {
+    width: 34px;
+    height: 34px;
+    background-color: #f4f6f9;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.user-pill {
+    background-color: #f4f6f9;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.user-avatar-sm {
+    width: 26px;
+    height: 26px;
+    background-color: #1d5fbf;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.admin-avatar-sm {
+    width: 32px;
+    height: 32px;
+    background-color: #e24b4a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
