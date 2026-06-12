@@ -28,12 +28,17 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="mb-4">
-        <h4 class="fw-bold mb-0">Dashboard</h4>
-        <p class="text-muted small mb-0">
-            <asp:Label ID="lblTodayDate" runat="server" Text=""></asp:Label>
-            &middot; Overview of today's workforce activity
-        </p>
+    <div class="d-flex justify-content-between align-items-start mb-4">
+        <div>
+            <h4 class="fw-bold mb-0">Dashboard</h4>
+            <p class="text-muted small mb-0">
+                <asp:Label ID="lblTodayDate" runat="server" Text=""></asp:Label>
+                &middot; Overview of today's workforce activity
+            </p>
+        </div>
+        <a href="../auth/Register.aspx" class="btn btn-primary">
+            <i class="bi bi-person-plus-fill me-1"></i> Add Staff
+        </a>
     </div>
 
     <div class="row g-3 mb-4">
